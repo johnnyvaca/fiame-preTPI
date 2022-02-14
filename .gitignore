@@ -1,56 +1,59 @@
 # OSX
-code\.DS_Store
+code/.DS_Store
+# Intellij
+code/.idea
+
 
 # Xcode
-code\build\
-code\*.pbxuser
-code\!default.pbxuser
-code\*.mode1v3
-code\!default.mode1v3
-code\*.mode2v3
-code\!default.mode2v3
-code\*.perspectivev3
-code\!default.perspectivev3
-code\xcuserdata
-code\*.xccheckout
-code\*.moved-aside
-code\DerivedData
-code\*.hmap
-code\*.ipa
-code\*.xcuserstate
+code/build/
+code/*.pbxuser
+code/!default.pbxuser
+code/*.mode1v3
+code/!default.mode1v3
+code/*.mode2v3
+code/!default.mode2v3
+code/*.perspectivev3
+code/!default.perspectivev3
+code/xcuserdata
+code/*.xccheckout
+code/*.moved-aside
+code/DerivedData
+code/*.hmap
+code/*.ipa
+code/*.xcuserstate
 
-# Android\IntelliJ
-code\build\
-code\.idea
-code\.gradle
-code\local.properties
-code\*.iml
-code\*.hprof
+# Android/IntelliJ
+code/build/
+
+code/.gradle
+code/local.properties
+code/*.iml
+code/*.hprof
 # node.js
 
-code\node_modules\
-code\npm-debug.log
-code\yarn-error.log
-code\package-lock.json
+code/node_modules/
+code/npm-debug.log
+code/yarn-error.log
+code/package-lock.json
 # BUCK
-code\buck-out\
-code\.buckd\
-code\*.keystore
-code\!debug.keystore
+code/buck-out/
+code/.buckd/
+code/*.keystore
+code/!debug.keystore
 
 # fastlane
 
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
-# https:\\docs.fastlane.tools\best-practices\source-control\
+# https://docs.fastlane.tools/best-practices/source-control/
 
-code\*\fastlane\report.xml
-code\*\fastlane\Preview.html
-code\*\fastlane\screenshots
+code/*/fastlane/report.xml
+code/*/fastlane/Preview.html
+code/*/fastlane/screenshots
 
 # Bundle artifact
-code\*.jsbundle
+code/*.jsbundle
 
 # CocoaPods
-code\ios\Pods\
+code/ios/Pods/
