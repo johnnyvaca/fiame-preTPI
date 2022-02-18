@@ -2,61 +2,71 @@ import React, { Component } from 'react';
 import {
     AppRegistry,
     StyleSheet,
-    Text,Image,
+    Text, Image,
     View,
-    TouchableOpacity,
+    TouchableOpacity, Button,
 } from 'react-native';
 import { NavigationBar } from 'navigationbar-react-native';
-
-const ComponentLeft = () => {
-    return(
-        <View style={{ flex: 1, alignItems: 'flex-start', backgroundColor:'yellow'}} >
-            <TouchableOpacity style={ {justifyContent:'center', flexDirection: 'row'}}>
-                <Image
-                    source={require('./img/ic_back.png')}
-                    style={{ resizeMode: 'contain', width: 20, height: 20, alignSelf: 'center' }}
-                />
-                <Text style={{ color: 'blue', }}>Back Home</Text>
-            </TouchableOpacity>
-        </View>
-    );
-};
-
-const ComponentCenter = () => {
-    return(
-        <View style={{ flex: 1, backgroundColor: 'blue'}}>
-            <Image
-                source={require('./img/ic_logo.png')}
-                style={{resizeMode: 'contain', width: 200, height: 35, alignSelf: 'center' }}
+import Menu from './Gabarit/menu';
+import {NavigationContainer} from "@react-navigation/native";
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
+function StackScreen2() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Home"
+                component={HomeScreen}
+                options={{ title: 'My home' }}
             />
+        </Stack.Navigator>
+    );
+}
+function HomeScreen() {
+    return (
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Text>Home Screen21</Text>
         </View>
     );
-};
+}
+function tex() {
+    return (
 
-const ComponentRight = () => {
-    return(
-        <View style={{ flex: 1, alignItems: 'flex-end', backgroundColor:'red' }}>
-            <TouchableOpacity>
-                <Text style={{ color: 'white', }}> Rights </Text>
-            </TouchableOpacity>
-        </View>
+            <Text>Home Screen21</Text>
+
     );
-};
-
+}
 class App extends Component {
     render() {
         return (
+
             <View style={styles.container}>
-                <View style={styles.navbar}>
-                <NavigationBar
-                    componentLeft={ () => <ComponentLeft />}
-                    componentCenter   = { () =>  <ComponentCenter /> }
-                    componentRight    = { () =>  <ComponentRight />  }
-                    navigationBarStyle= {{ backgroundColor: 'orange' }}
-                    statusBarStyle    = {{ barStyle: 'light-content', backgroundColor: '#215e79' }}
-                />
-                </View>
+                <NavigationContainer>
+                    <Menu />
+                    <Stack.Navigator>
+                        <Stack.Screen
+                            name="Home"
+                            component={HomeScreen}
+                            options={{ title: 'My home' }}
+                        />
+                    </Stack.Navigator>
+
+
+                </NavigationContainer>
+                <Menu />
             </View>
+            /*
+            <NavigationContainer>
+                <Stack.Navigator>
+                    <Stack.Screen
+                        name="Home"
+                        component={HomeScreen}
+                        options={{ title: 'My home' }}
+                    />
+                </Stack.Navigator>
+            </NavigationContainer>
+
+             */
         );
     }
 }
