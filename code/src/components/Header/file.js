@@ -5,5 +5,5 @@ import {Text} from  "react-native"
 
 export default function File(){
     return(
-    <Text>hello</Text>)
+    <Text>hello2</Text>)
 }

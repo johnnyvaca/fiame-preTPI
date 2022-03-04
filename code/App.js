@@ -8,7 +8,7 @@
 
 import React from 'react';
 
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import {NavigationBar} from "navigationbar-react-native";
@@ -21,21 +21,24 @@ const Tab = createMaterialTopTabNavigator();
 const App = () => {
   return (
     <SafeAreaView style={{flex: 1,}}>
-        <View style={{flex:1}}>
+        <View style={{flex:1,paddingTop:10}}>
         <Text style={{fontSize:30, fontWeight:'bold'}}>Fiame</Text>
+            <Image
+                source={require('./assets/icons/user.png')}
+                style={styles.a}
+            />
         </View>
         <View style={{flex:3}}>
             <NavigationContainer>
                 <TopTabs />
             </NavigationContainer>
         </View>
-
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  a: {},
+  a: {width:60,height:60,position:'absolute', right:10,paddingTop:10},
 });
 
 export default App;

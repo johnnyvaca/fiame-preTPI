@@ -6,16 +6,18 @@ export default function TaskTile({image,nom,date,vendeur,prix}) {
 
   return (
     <View style={styles.container}>
-        <Image
-            source={require('../../../assets/icons/pollo.png')}
-            style={styles.pollo}
-        />
+        <View style={{flexDirection: 'row', width:'98%'}}>
+            <Image
+                source={require('../../../assets/icons/pollo.png')}
+                style={styles.pollo}
+            />
         <View >
-      <Text style={styles.title}>{nom}</Text>
-      <Text style={styles.title}>{date}</Text>
-      <Text style={styles.title}>{vendeur}</Text>
+        <Text style={styles.title}>{nom}</Text>
+        <Text style={styles.title}>{date}</Text>
+        <Text style={styles.title}>{vendeur}</Text>
         </View>
-        <Text style={{fontSize:30,left:30}}>{prix}</Text>
+        <Text style={{fontSize:30,position:'absolute', right:1}}>{prix}</Text>
+        </View>
     </View>
   );
 }
@@ -23,7 +25,9 @@ export default function TaskTile({image,nom,date,vendeur,prix}) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center',width:'100%'
+
+      ,paddingHorizontal:10
   },
   subContainer: {
     flexDirection: 'row',
