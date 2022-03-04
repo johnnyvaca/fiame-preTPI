@@ -4,7 +4,7 @@ import {NavigationBar} from "navigationbar-react-native";
 
 const ComponentLeft = () => {
     return(
-        <View style={{ flex: 1, alignItems: 'flex-start', backgroundColor:'yellow'}} >
+        <View style={{ flex: 1, alignItems: 'flex-start', backgroundColor:'yellow', width:'100%'}} >
             <TouchableOpacity style={ {justifyContent:'center', flexDirection: 'row'}}>
                 <Image
                     source={require('../img/ic_back.png')}
@@ -48,10 +48,9 @@ const ComponentRight = () => {
 
 const Menu = () => {
     return (
-        <View style={styles.navbar}>
+        <View  style={styles.navbar}>
             <NavigationBar
                 componentLeft={() => <ComponentLeft/>}
-                componentCenter={() => <ComponentCenter/>}
                 componentRight={() => <ComponentRight/>}
                 navigationBarStyle={{backgroundColor: 'orange'}}
                 statusBarStyle={{barStyle: 'light-content', backgroundColor: '#215e79'}}
@@ -61,10 +60,9 @@ const Menu = () => {
 };
 const styles = StyleSheet.create({
     navbar: {
-        position: 'absolute',
-        top: '10%',
-        left: 0,
-        right: 0,
+backgroundColor: 'blue',
+        width : '100%',
+        height : '7%'
     }
 });
 
