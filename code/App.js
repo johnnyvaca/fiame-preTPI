@@ -22,7 +22,7 @@ const App = () => {
   return (
     <SafeAreaView style={{flex: 1,}}>
         <View style={{flex:1,paddingTop:10}}>
-        <Text style={{fontSize:30, fontWeight:'bold'}}>Fiame</Text>
+        <Text style={{fontSize:30, fontWeight:'bold',}}>                 Fiame</Text>
             <Image
                 source={require('./assets/icons/user.png')}
                 style={styles.a}
@@ -38,8 +38,7 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-  a: {width:60,height:60,position:'absolute', right:10,paddingTop:10},
+  a: {width:60,height:60,position:'absolute', right:10,marginTop:10},
 });
 
 export default App;
-//
