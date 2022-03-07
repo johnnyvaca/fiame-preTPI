@@ -2,7 +2,7 @@
 import React, {Fragment} from 'react';
 import {Text, Image, StyleSheet, View} from 'react-native';
 
-export default function TaskTile({image,nom,date,vendeur,prix}) {
+export default function TaskTile() {
 
   return (
     <View style={styles.container}>
@@ -12,11 +12,11 @@ export default function TaskTile({image,nom,date,vendeur,prix}) {
                 style={styles.pollo}
             />
         <View >
-        <Text style={styles.title}>{nom}</Text>
-        <Text style={styles.title}>{date}</Text>
-        <Text style={styles.title}>{vendeur}</Text>
+        <Text style={styles.title}>pollo kfc</Text>
+        <Text style={styles.title}>12.03.2022</Text>
+        <Text style={styles.title}>Johnny Vaca</Text>
         </View>
-        <Text style={{fontSize:30,position:'absolute', right:10}}>{prix}</Text>
+        <Text style={{fontSize:30,position:'absolute', right:10}}>100.-</Text>
         </View>
     </View>
   );
