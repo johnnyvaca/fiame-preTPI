@@ -15,6 +15,7 @@ export default function SalesScreen(){
     const [sales,setSales] = useState(DATA)
 
 const renderItem = ({item}) => {
+
         return (
             <SaleItem sale={item}  />
 

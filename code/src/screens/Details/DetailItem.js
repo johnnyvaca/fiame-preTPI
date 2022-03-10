@@ -1,15 +1,15 @@
 
 import React, {Fragment} from 'react';
 import {Text, Image, StyleSheet, View, TouchableOpacity} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-export default function SaleItem({sale}) {
+
+export default function DetailItem({sale}) {
 
 
-const navigation = useNavigation();
+
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => navigation.navigate('Details',{id:sale.id})} style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
+            <TouchableOpacity onPress={() => this.props.navigate('Tasks')} style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
                 <Image
                     source={sale.image}
                     style={styles.pollo}
