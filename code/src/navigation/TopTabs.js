@@ -1,7 +1,6 @@
 import React from "react";
 import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs"
 import File from "../components/Header/file";
-import TasksScreen from "../screens/Tasks/TaskScreen2";
 import SalesScreen from "../screens/Sales";
 const TopTab = createMaterialTopTabNavigator();
 

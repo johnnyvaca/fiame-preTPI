@@ -1,5 +1,5 @@
 
-import React, {Fragment} from 'react';
+import React, {Fragment, useLayoutEffect} from 'react';
 import {Text, Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 export default function SaleItem({sale}) {
@@ -7,9 +7,13 @@ export default function SaleItem({sale}) {
 
 const navigation = useNavigation();
 
+    function test() {
+        navigation.navigate('Details', {id: sale.id,title:sale.title, image: sale.image})
+    }
+
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => navigation.navigate('Details',{id:sale.id})} style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
+            <TouchableOpacity onPress={() => {test()} } style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
                 <Image
                     source={sale.image}
                     style={styles.pollo}
