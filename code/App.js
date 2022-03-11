@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator()
 const Header = () => {
     return (
         <View style={{flex:1,paddingTop:10}}>
-            <Text style={{fontSize:30, fontWeight:'bold',}}>                 Fiame</Text>
+            <Text style={{fontSize:30, fontWeight:'bold',}}>Fiame</Text>
             <Image
                 source={require('./assets/icons/user.png')}
                 style={styles.a}
@@ -41,7 +41,7 @@ const App = () => {
                     component={TopTabs}
                     options={{headerTitle:() =>
                             <View style={{flex:1,paddingTop:10}}>
-                                <Text style={{fontSize:30, fontWeight:'bold',}}>                 Fiame</Text>
+                                <Text style={{fontSize:30, fontWeight:'bold', flexDirection:'row',width: 100, marginHorizontal:140}}>Fiame</Text>
                                 <Image
                                     source={require('./assets/icons/user.png')}
                                     style={styles.a}

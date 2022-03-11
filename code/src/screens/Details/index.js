@@ -4,6 +4,8 @@ import {FlatList, Image, StyleSheet, Text, View} from "react-native";
 
 export default function DetailsScreen({route}){
 
+
+
     return(
         <View style={styles.container}>
             <View style={{flex:3, backgroundColor:'red'}} >

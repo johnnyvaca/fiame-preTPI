@@ -8,7 +8,7 @@ export default function SaleItem({sale}) {
 const navigation = useNavigation();
 
     function test() {
-        navigation.navigate('Details', {id: sale.id,title:sale.title, image: sale.image})
+        navigation.navigate('Details', {id: sale.id,title:sale.title, image: sale.image,date: sale.date,seller: sale.seller,price: sale.price })
     }
 
     return (
