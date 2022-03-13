@@ -7,7 +7,7 @@ const TopTab = createMaterialTopTabNavigator();
 export default function TopTabs(){
     return(
         <TopTab.Navigator>
-            <TopTab.Screen name="prochaines" component={SalesScreen} />
+            <TopTab.Screen name="prochaines2" component={SalesScreen} />
             <TopTab.Screen name="anterieurs" component={File} />
             <TopTab.Screen name="mes achats" component={File} />
         </TopTab.Navigator>

@@ -18,6 +18,7 @@ const navigation = useNavigation();
                     source={sale.image}
                     style={styles.pollo}
                 />
+
                 <View>
                     <Text style={styles.title}>{sale.title}</Text>
                     <Text style={styles.title}>{sale.date}</Text>
