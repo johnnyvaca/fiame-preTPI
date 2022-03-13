@@ -3,7 +3,7 @@ import {Button, Dimensions, FlatList, Image, StyleSheet, Text, View} from "react
 import NumericInput from 'react-native-numeric-input'
 
 export default function DetailsScreen({route}){
-    const [ firstName, setFirstName ] = useState(1);
+    const [ quantity, setQuantity ] = useState(route.params.quantity);
 return(
         <View style={styles.container}>
             <View style={{flex:6}} >
@@ -19,9 +19,8 @@ return(
                 <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>Commande</Text>
                 <NumericInput
                     type={"up-down"}
-                    value={firstName}
-                    initValue={route.params.quantity}
-                    onChange={firstname => setFirstName(firstname)}
+                    value={quantity}
+                    onChange={ quantity => setQuantity(quantity)}
                     onLimitReached={(isMax,msg) => console.log(isMax,msg)}
                     totalWidth={100}
                     totalHeight={70}
