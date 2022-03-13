@@ -8,17 +8,18 @@ export default function SaleItem({sale}) {
 const navigation = useNavigation();
 
     function test() {
-        navigation.navigate('Details', {id: sale.id,title:sale.title, image: sale.image,date: sale.date,seller: sale.seller,price: sale.price })
+        navigation.navigate('Details', {id: sale.id,title:sale.title, image: sale.image,date: sale.date,seller: sale.seller,price: sale.price, quantity: sale.quantity,paid: sale.paid})
     }
 
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => {test()} } style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
+             <View style={styles.pollo2}>
                 <Image
                     source={sale.image}
                     style={styles.pollo}
                 />
-
+        </View>
                 <View>
                     <Text style={styles.title}>{sale.title}</Text>
                     <Text style={styles.title}>{sale.date}</Text>
@@ -43,6 +44,10 @@ const styles = StyleSheet.create({
     },
     unchecked: {width: 56, height: 56, left: 1},
     bin: {width: 56, height: 56, left: 30},
-    pollo: {width:150, height:100,marginRight:0}
+    pollo: {
+        flex:1,
+        width: '100%',
+        resizeMode:'contain'},
+    pollo2: {width:150, height:100,marginRight:0,paddingHorizontal:10,paddingBottom:10}
 
 });
