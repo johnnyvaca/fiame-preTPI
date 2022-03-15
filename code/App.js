@@ -16,7 +16,6 @@ import TopTabs from "./src/navigation/TopTabs";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import DetailsScreen from "./src/screens/Details";
 
-
 const Stack = createNativeStackNavigator()
 
 const Header = () => {
