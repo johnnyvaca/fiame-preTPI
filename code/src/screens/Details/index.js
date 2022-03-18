@@ -41,7 +41,7 @@ return(
             </View>
             <View style={{flex:1,backgroundColor:'orange',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
                 <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>A Payer</Text>
-                <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>{(route.params.quantity-route.params.paid)*route.params.price}.- CHF</Text>
+                <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>{(quantity-route.params.paid)*route.params.price}.- CHF</Text>
             </View>
             <View style={{flex:1,backgroundColor:'grey',flexDirection:'row',alignItems:'center',justifyContent:'space-around',paddingHorizontal:70}}>
                 <Button title="Confirmer" />
