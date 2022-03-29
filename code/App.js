@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
@@ -17,6 +17,7 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import DetailsScreen from "./src/screens/Details";
 
 const Stack = createNativeStackNavigator()
+
 
 const Header = () => {
     return (
