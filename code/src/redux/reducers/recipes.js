@@ -1,7 +1,7 @@
-import {ADD_RECIPES} from "../actions/actionsTypes"
+import {ADD_RECIPES} from "../actions/actionsTypes";
 const initialState = {
     list: [],
-  //  selectedRecipe: {}
+   // selectedRecipe: {}
 }
 
 export const recipes = (state = initialState, action) => {
@@ -12,6 +12,6 @@ export const recipes = (state = initialState, action) => {
                 list: [...state.list, action.payload.data]
             }
         default:
-            return state
+            return state 
     }
 }

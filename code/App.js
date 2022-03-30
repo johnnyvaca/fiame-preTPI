@@ -15,8 +15,8 @@ import {NavigationContainer, useRoute} from "@react-navigation/native";
 import TopTabs from "./src/navigation/TopTabs";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import DetailsScreen from "./src/screens/Details";
-import {Provider} from "react-redux"
-import {store} from "./src/redux/store"
+import {Provider} from "react-redux";
+import {store} from "./src/redux/store";
 
 const Stack = createNativeStackNavigator()
 
