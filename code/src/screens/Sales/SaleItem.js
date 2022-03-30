@@ -8,7 +8,7 @@ export default function SaleItem({sale}) {
 const navigation = useNavigation();
 
     function test() {
-        navigation.navigate('Details', {id: sale.id,title:sale.title, image: sale.image,date: sale.date,seller: sale.seller,price: sale.price, quantity: sale.quantity,paid: sale.paid})
+        navigation.navigate('Details', {id: sale.id,name: sale.name, image: sale.image,selling_date: sale.selling_date,user_id: sale.user_id,price: sale.price, quantity: sale.quantity,paid: sale.paid})
     }
 
     return (
@@ -16,14 +16,14 @@ const navigation = useNavigation();
             <TouchableOpacity onPress={() => {test()} } style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
              <View style={styles.pollo2}>
                 <Image
-                    source={sale.image}
+                    source={sale.name}
                     style={styles.pollo}
                 />
         </View>
                 <View>
-                    <Text style={styles.title}>{sale.title}</Text>
-                    <Text style={styles.title}>{sale.date}</Text>
-                    <Text style={styles.title}>{sale.seller}</Text>
+                    <Text style={styles.title}>{sale.name}</Text>
+                    <Text style={styles.title}>{sale.selling_date}</Text>
+                    <Text style={styles.title}>{sale.user_id}</Text>
                 </View>
                 <Text style={{fontSize:30,position:'absolute', right:10}}>{sale.price}.-</Text>
             </TouchableOpacity>

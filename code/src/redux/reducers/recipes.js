@@ -9,9 +9,9 @@ export const recipes = (state = initialState, action) => {
         case ADD_RECIPES:
             return {
            //     selectedRecipe: state.selectedRecipe
-                list: [...state.list, action.payload.data]
+                list: [...state.list, ...action.payload.data]
             }
         default:
-            return state 
+            return state
     }
 }

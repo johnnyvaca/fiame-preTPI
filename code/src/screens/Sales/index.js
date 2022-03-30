@@ -1,9 +1,10 @@
 import React, {useEffect} from "react";
-import {FlatList} from "react-native";
+import {FlatList, Text} from "react-native";
 import {useState} from "react";
 import SaleItem from "./SaleItem";
 import {useFetchSales} from "../../api/UseFetchSales";
-
+import {useSelector} from "react-redux";
+import {getSalesList} from "../../redux/selectors";
 
 
 const DATA = [
@@ -14,28 +15,39 @@ const DATA = [
 
 export default function SalesScreen(){
 
+const allSales = useSelector(getSalesList)
     const {getAllSales} = useFetchSales()
+    console.log("ALL Sales: ",allSales)
+
+    useEffect(() =>  {
+        getAllSales()
+    },[])
 
     const [sales,setSales] = useState(DATA)
 
 const renderItem = ({item}) => {
 
         return (
-            <SaleItem sale={item}  />
-        )
+            <SaleItem sale={item} />
+
+        );
 
     }
-    useEffect(() =>  {
-        getAllSales()
-        },[]
-
-    )
 
     return(
+
         <FlatList
-            data={sales}
+            data={allSales}
             keyExtractor={(item,index) => index.toString()}
             renderItem={renderItem}
         />
+
+         /*
+        <>
+            {allSales.map(recipe => (
+                    <Text>{recipe.name}</Text>
+                )
+            )}
+        </> */
     )
 }
