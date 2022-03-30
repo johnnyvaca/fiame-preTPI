@@ -42,12 +42,5 @@ const renderItem = ({item}) => {
             renderItem={renderItem}
         />
 
-         /*
-        <>
-            {allSales.map(recipe => (
-                    <Text>{recipe.name}</Text>
-                )
-            )}
-        </> */
     )
 }

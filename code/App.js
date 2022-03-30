@@ -35,7 +35,6 @@ const Header = () => {
 
 const App = () => {
     return (<Provider store={store}>
-            <SafeAreaView style={{flex: 1,}}>
                 <NavigationContainer>
                     <Stack.Navigator>
                         <Stack.Screen
@@ -65,7 +64,6 @@ const App = () => {
                     </Stack.Navigator>
                 </NavigationContainer>
 
-            </SafeAreaView>
         </Provider>
     );
 };
