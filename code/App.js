@@ -58,7 +58,7 @@ const App = () => {
                             }}
                         />
                         <Stack.Screen name="Details" component={DetailsScreen} options={({route}) => ({
-                            title: route.params.title
+                            title: route.params.name
                         })}/>
 
                     </Stack.Navigator>

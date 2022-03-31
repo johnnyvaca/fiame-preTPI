@@ -8,7 +8,7 @@ export default function SaleItem({sale}) {
 const navigation = useNavigation();
 
     function test() {
-        navigation.navigate('Details', {id: sale.id,name: sale.name, image: sale.image,selling_date: sale.selling_date,user_id: sale.user_id,price: sale.price, quantity: sale.quantity,paid: sale.paid})
+        navigation.navigate('Details', {id: sale.id,name: sale.name, img: sale.img,selling_date: sale.selling_date,user_id: sale.user_id,price: sale.price, quantity: sale.quantity,paid: sale.paid})
     }
 
     return (
@@ -16,7 +16,7 @@ const navigation = useNavigation();
             <TouchableOpacity onPress={() => {test()} } style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
              <View style={styles.pollo2}>
                 <Image
-                    source={sale.name}
+                    source={{uri: sale.img}}
                     style={styles.pollo}
                 />
         </View>
