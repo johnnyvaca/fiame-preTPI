@@ -11,13 +11,13 @@ export default function DetailItem({sale}) {
         <View style={styles.container}>
             <TouchableOpacity onPress={() => this.props.navigate('Tasks')} style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
                 <Image
-                    source={sale.image}
+                    source={{uri: sale.img}}
                     style={styles.pollo}
                 />
                 <View>
-                    <Text style={styles.title}>{sale.title}</Text>
-                    <Text style={styles.title}>{sale.date}</Text>
-                    <Text style={styles.title}>{sale.seller}</Text>
+                    <Text style={styles.title}>{sale.name}</Text>
+                    <Text style={styles.title}>{sale.selling_date}</Text>
+                    <Text style={styles.title}>{sale.user_id}</Text>
                 </View>
                 <Text style={{fontSize:30,position:'absolute', right:10}}>{sale.price}.-</Text>
             </TouchableOpacity>

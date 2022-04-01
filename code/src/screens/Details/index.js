@@ -7,12 +7,12 @@ export default function DetailsScreen({route}){
 return(
         <View style={styles.container}>
             <View style={{flex:6}} >
-                <Image  source={route.params.image}  style={styles.coucou} />
+                <Image  source={{uri: route.params.img}}  style={styles.coucou} />
             </View>
             <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'space-around',borderBottomColor:'black0',borderTopColor:'black',borderTopWidth:3,borderBottomWidth:3}} >
-                <Text style={styles.textes}>{route.params.title}</Text>
-                <Text style={styles.textes}>{route.params.date}</Text>
-                <Text style={styles.textes}>{route.params.seller}</Text>
+                <Text style={styles.textes}>{route.params.name}</Text>
+                <Text style={styles.textes}>{route.params.selling_date}</Text>
+                <Text style={styles.textes}>{route.params.user_id}</Text>
                 <Text style={styles.textes}>{route.params.price}.- CHF</Text>
             </View>
             <View style={{flex:2,flexDirection:'row',alignItems:'center',justifyContent:'center',marginTop:-10}}>
