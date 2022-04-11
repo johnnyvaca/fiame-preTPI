@@ -2,6 +2,7 @@
 import React, {Fragment, useLayoutEffect} from 'react';
 import {Text, Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import {URL} from '../../api/UseFetchSales'
 export default function SaleItem({sale}) {
 
 
@@ -10,13 +11,12 @@ const navigation = useNavigation();
     function test() {
         navigation.navigate('Details', {id: sale.id,name: sale.name, img: sale.img,selling_date: sale.selling_date,user_id: sale.user_id,price: sale.price, quantity: sale.quantity,paid: sale.paid})
     }
-
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => {test()} } style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
              <View style={styles.pollo2}>
                 <Image
-                    source={{uri: sale.img}}
+                    source={{uri:URL+"/img/"+ sale.img}}
                     style={styles.pollo}
                 />
         </View>

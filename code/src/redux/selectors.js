@@ -1,1 +1,1 @@
-export const getSalesList = store => store.recipes.list
+export const getSalesList = store => store.sales.list

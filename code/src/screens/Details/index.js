@@ -1,13 +1,15 @@
 import React, {useState} from "react";
 import {Button, Dimensions, FlatList, Image, StyleSheet, Text, View} from "react-native";
 import NumericInput from 'react-native-numeric-input'
+import {URL} from "../../api/UseFetchSales";
 
 export default function DetailsScreen({route}){
     const [ quantity, setQuantity ] = useState(route.params.quantity);
+    console.log("log1",URL)
 return(
         <View style={styles.container}>
             <View style={{flex:6}} >
-                <Image  source={{uri: route.params.img}}  style={styles.coucou} />
+                <Image  source={{uri:URL+"/img/"+ route.params.img}}  style={styles.coucou} />
             </View>
             <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'space-around',borderBottomColor:'black0',borderTopColor:'black',borderTopWidth:3,borderBottomWidth:3}} >
                 <Text style={styles.textes}>{route.params.name}</Text>

@@ -33,36 +33,33 @@ const Header = () => {
     )
 }
 
+function Head() {
+    <View style={{flex: 1, paddingTop: 10}}>
+        <Text style={{
+            fontSize: 30,
+            fontWeight: 'bold',
+            flexDirection: 'row',
+            width: 100,
+            marginHorizontal: 140
+        }}>Fiame</Text>
+        <Image
+            source={require('./assets/icons/user.png')}
+            style={styles.a}
+        />
+    </View>
+}
+
 const App = () => {
     return (<Provider store={store}>
-                <NavigationContainer>
-                    <Stack.Navigator>
-                        <Stack.Screen
-                            name="Home"
-                            component={TopTabs}
-                            options={{
-                                headerTitle: () =>
-                                    <View style={{flex: 1, paddingTop: 10}}>
-                                        <Text style={{
-                                            fontSize: 30,
-                                            fontWeight: 'bold',
-                                            flexDirection: 'row',
-                                            width: 100,
-                                            marginHorizontal: 140
-                                        }}>Fiame</Text>
-                                        <Image
-                                            source={require('./assets/icons/user.png')}
-                                            style={styles.a}
-                                        />
-                                    </View>
-                            }}
-                        />
-                        <Stack.Screen name="Details" component={DetailsScreen} options={({route}) => ({
-                            title: route.params.name
-                        })}/>
+            <NavigationContainer>
+                <Stack.Navigator>
+                    <Stack.Screen name="Home" component={TopTabs} options={{headerTitle: () => {Head}}}/>
+                    <Stack.Screen name="Details" component={DetailsScreen} options={({route}) => ({
+                        title: route.params.name
+                    })}/>
 
-                    </Stack.Navigator>
-                </NavigationContainer>
+                </Stack.Navigator>
+            </NavigationContainer>
 
         </Provider>
     );

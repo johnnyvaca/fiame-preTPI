@@ -1,7 +1,7 @@
-import {ADD_RECIPES} from "./actionsTypes";
+import {ADD_SALES} from "./actionsTypes";
 
-export const addRecipes = (data) => ({
-    type: ADD_RECIPES,
+export const addSales = (data) => ({
+    type: ADD_SALES,
     payload: {
         data
     }

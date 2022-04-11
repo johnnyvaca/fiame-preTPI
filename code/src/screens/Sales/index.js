@@ -23,7 +23,7 @@ const allSales = useSelector(getSalesList)
         getAllSales()
     },[])
 
-    const [sales,setSales] = useState(DATA)
+   // const [sales,setSales] = useState(DATA)
 
 const renderItem = ({item}) => {
 

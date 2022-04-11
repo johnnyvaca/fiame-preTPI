@@ -1,5 +1,5 @@
 import {combineReducers} from "redux";
-import {recipes} from "./recipes";
+import {sales} from "./sales";
 export const rootReducer = combineReducers({
-    recipes
+    sales: sales
 })

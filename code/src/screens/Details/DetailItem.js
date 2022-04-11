@@ -1,17 +1,19 @@
 
 import React, {Fragment} from 'react';
 import {Text, Image, StyleSheet, View, TouchableOpacity} from 'react-native';
-
+import {URL} from '../../api/UseFetchSales'
 export default function DetailItem({sale}) {
 
 
 
 
     return (
+
         <View style={styles.container}>
             <TouchableOpacity onPress={() => this.props.navigate('Tasks')} style={{flexDirection: 'row', width:'98%', borderWidth:2,borderColor:'#084572',borderRadius:20, alignItems:'center'}}>
+
                 <Image
-                    source={{uri: sale.img}}
+                    source={{uri:URL+"/img/"+ sale.img}}
                     style={styles.pollo}
                 />
                 <View>

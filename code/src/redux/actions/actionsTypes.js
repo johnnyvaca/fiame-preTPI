@@ -1,1 +1,1 @@
-export const ADD_RECIPES = "ADD_RECIPES"
+export const ADD_SALES = "ADD_SALES"
