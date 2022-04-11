@@ -57,3 +57,4 @@ code/*.jsbundle
 
 # CocoaPods
 code/ios/Pods/
+code/src/api/UseFetchSales.js

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Button, Dimensions, FlatList, Image, StyleSheet, Text, View} from "react-native";
 import NumericInput from 'react-native-numeric-input'
-import {URL} from "../../api/UseFetchSales";
+import {URL} from "../../../env";
 
 export default function DetailsScreen({route}){
     const [ quantity, setQuantity ] = useState(route.params.quantity);
