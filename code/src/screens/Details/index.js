@@ -39,7 +39,7 @@ return(
             </View>
             <View style={{flex:1,backgroundColor:'grey',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
                 <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>Payés</Text>
-                <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>{route.params.paid} plâts</Text>
+                <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>{route.params.paid} plats</Text>
             </View>
             <View style={{flex:1,backgroundColor:'orange',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
                 <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>A Payer</Text>
