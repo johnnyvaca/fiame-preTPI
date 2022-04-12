@@ -13,7 +13,7 @@ const DATA = [
     {title:'Chaulafan',price:15,seller:'Johnny Vaca',date:'12.03.2022', id:30, image:require("../../../assets/icons/chaulafan.png"),quantity:5,paid:3}
 ]
 
-export default function SalesScreen(){
+export default function SalesScreen({navigation}){
 
 const allSales = useSelector(getSalesList)
     const {getAllSales} = useFetchSales()
@@ -28,7 +28,7 @@ const allSales = useSelector(getSalesList)
 const renderItem = ({item}) => {
 
         return (
-            <SaleItem sale={item} />
+            <SaleItem sale={item} navigation={navigation} />
 
         );
 

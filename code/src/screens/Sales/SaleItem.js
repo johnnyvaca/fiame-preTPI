@@ -3,10 +3,8 @@ import React, {Fragment, useLayoutEffect} from 'react';
 import {Text, Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import {URL} from '../../../env'
-export default function SaleItem({sale}) {
+export default function SaleItem({sale,navigation}) {
 
-
-const navigation = useNavigation();
 
     function test() {
         navigation.navigate('Details', {id: sale.id,name: sale.name, img: sale.img,selling_date: sale.selling_date,user_id: sale.user_id,price: sale.price, quantity: sale.quantity,paid: sale.paid})

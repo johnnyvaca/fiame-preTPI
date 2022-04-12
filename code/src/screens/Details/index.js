@@ -1,21 +1,40 @@
-import React, {useState} from "react";
-import {Button, Dimensions, FlatList, Image, StyleSheet, Text, View} from "react-native";
+import React, {useEffect, useState} from "react";
+import {Button, Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import NumericInput from 'react-native-numeric-input'
 import {URL} from "../../../env";
+import {useSelector} from "react-redux";
+import {getSalesList, getSelectedSale} from "../../redux/selectors";
+import {useFetchSales} from "../../api/UseFetchSales";
 
-export default function DetailsScreen({route}){
+export default function DetailsScreen({navigation,route}){
+
     const [ quantity, setQuantity ] = useState(route.params.quantity);
-    console.log("log1",URL)
+    const {id} = route.params
+
+    const {getSelectedSaleById} = useFetchSales()
+    const sale = useSelector(getSelectedSale)
+
+    useEffect(() => {
+        getSelectedSaleById(id)
+    })
+
+
+    console.log("sale: ", sale)
+
 return(
         <View style={styles.container}>
+            <TouchableOpacity onPress={() => {navigation.goBack()}}>
+            <Text>revenir</Text>
+                <Text>{id}</Text>
+            </TouchableOpacity>
             <View style={{flex:6}} >
-                <Image  source={{uri:URL+"/img/"+ route.params.img}}  style={styles.coucou} />
+                <Image  source={{uri:URL+"/img/"+ sale.img}}  style={styles.coucou} />
             </View>
             <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'space-around',borderBottomColor:'black0',borderTopColor:'black',borderTopWidth:3,borderBottomWidth:3}} >
-                <Text style={styles.textes}>{route.params.name}</Text>
-                <Text style={styles.textes}>{route.params.selling_date}</Text>
-                <Text style={styles.textes}>{route.params.user_id}</Text>
-                <Text style={styles.textes}>{route.params.price}.- CHF</Text>
+                <Text style={styles.textes}>{sale.name}</Text>
+                <Text style={styles.textes}>{sale.selling_date}</Text>
+                <Text style={styles.textes}>{sale.user_id}</Text>
+                <Text style={styles.textes}>{sale.price}.- CHF</Text>
             </View>
             <View style={{flex:2,flexDirection:'row',alignItems:'center',justifyContent:'center',marginTop:-10}}>
                 <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>Commande</Text>
@@ -39,11 +58,11 @@ return(
             </View>
             <View style={{flex:1,backgroundColor:'grey',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
                 <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>Payés</Text>
-                <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>{route.params.paid} plats</Text>
+                <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>{sale.paid} plats</Text>
             </View>
             <View style={{flex:1,backgroundColor:'orange',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
                 <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>A Payer</Text>
-                <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>{(quantity-route.params.paid)*route.params.price}.- CHF</Text>
+                <Text style={{fontWeight:"bold",fontSize:20, paddingRight:50}}>{(sale.quantity-sale.paid)*sale.price}.- CHF</Text>
             </View>
             <View style={{flex:1,backgroundColor:'grey',flexDirection:'row',alignItems:'center',justifyContent:'space-around',paddingHorizontal:70}}>
                 <Button title="Confirmer" />
