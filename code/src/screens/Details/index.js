@@ -3,20 +3,19 @@ import {Button, Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity,
 import NumericInput from 'react-native-numeric-input'
 import {URL} from "../../../env";
 import {useSelector} from "react-redux";
-import {getSalesList, getSelectedSale} from "../../redux/selectors";
+import {getSelectedSale} from "../../redux/selectors";
 import {useFetchSales} from "../../api/UseFetchSales";
 
 export default function DetailsScreen({navigation,route}){
 
     const [ quantity, setQuantity ] = useState(route.params.quantity);
     const {id} = route.params
-
     const {getSelectedSaleById} = useFetchSales()
     const sale = useSelector(getSelectedSale)
 
-    useEffect(() => {
+  //  useEffect(() => { })
         getSelectedSaleById(id)
-    })
+
 
 
     console.log("sale: ", sale)

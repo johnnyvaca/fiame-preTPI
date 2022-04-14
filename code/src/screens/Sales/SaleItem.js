@@ -7,7 +7,7 @@ export default function SaleItem({sale,navigation}) {
 
 
     function test() {
-        navigation.navigate('Details', {id: sale.id,name: sale.name, img: sale.img,selling_date: sale.selling_date,user_id: sale.user_id,price: sale.price, quantity: sale.quantity,paid: sale.paid})
+        navigation.navigate('Details', {id: sale.id})
     }
     return (
         <View style={styles.container}>
